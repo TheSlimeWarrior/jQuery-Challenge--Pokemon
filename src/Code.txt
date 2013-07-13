@@ -279,3 +279,4 @@ var userTwo = prompt("Choose: 'Bulbusar', 'Charmander' or 'Squirtle'");
 } else {
     confirm("Invalid number of players entered, make sure you awnser '1' or '2' Player game, press f5 or Refresh the page to restart.");
 }
+//Added Jacob Holmes
