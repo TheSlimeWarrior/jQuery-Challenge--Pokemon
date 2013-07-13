@@ -1,19 +1,158 @@
+//Release Alpha 2.0.1
 //Variables
-var randomnumber=Math.floor(Math.random()*2)+1;
-console.log(randomnumber);
-userOneOn = "0";
-userTwoOn = "0";
+console.log("The Console is for debugging purpses only and only when the console is avalible- Do not use this to cheat or Exploit.");
+var computerWinRng = Math.floor(Math.random()*2)+1;
+var computerChoiceRNG = Math.floor(Math.random()*3)+1;
+console.log(computerWinRng);
+console.log("computerWinRng");
+console.log(computerChoiceRNG);
+console.log("computerChoiceRNG");
+var userOneOn = "0";
+var userTwoOn = "0";
+var CpuChoice = "null";
 //Intro
-confirm("Ready to play- Pokemon- Text based Edition. By TheSlimeWarrior!");
-confirm("Ready? You are going to need two players to play this game.");
+confirm("Welcome to Pokemon- JavaText Adventure! By Lucas Lewis! ( Version Aplpha 2.0.1 )");
+var Rnotes = prompt("Would you like to see the release notes, Awnser 'Yes' or 'No', Be sure to use Capitals as all questions are CaSe SeNsItIvE.");
+if(Rnotes === "Yes"){
+    confirm("                            == Alpha Release 2.0.1==                                                                                                   Finished Singleplayer gamemode, And have refurbished the Charmander vs Bulbusar Fight, That is 1/6 of the Required Re-Scripted Battles, Fixed Typo's and a bug involving the player being redirected to Gamemode Multiplayer if a incorrect gamemode was given, this is due to a syntax error with the second else if Statement.");
+    console.log("Saw Update Log");
+}
+confirm("You can play Player vs Player, or Computer vs Player");
+var gamemode = prompt("How many, 1 or 2, Players do you have? Please awnser with '1' or '2'");
+console.log( gamemode );
+if( gamemode === "1" ){
+confirm("You have Chosen: Singleplayer.");
+    //Single Player
+    if ( computerChoiceRNG === 1 ){
+        CpuChoice = "Bulbusar";
+    } else if (computerChoiceRNG === 2){
+        CpuChoice = "Charmander";
+    } else {
+        CpuChoice = "Squirtle";
+    }
+    console.log(CpuChoice);
+    //UserOne (SinglePlayer)
+var userOne = prompt("Choose: 'Bulbusar', 'Charmander' or 'Squirtle'");
+//Binary Debug for userOne (SinglePlayer)
+    if(userOne === "Bulbusar"){
+        userOneOn = "1";
+    }
+     if(userOne === "Charmander"){
+        userOneOn = "1";
+    }
+     if(userOne === "Squirtle"){
+        userOneOn = "1";
+    }
+    if (userOneOn === "0"){
+        console.log("User One N/A");
+        confirm("You did not enter a valid Pokemon, Please make sure you spelt it as shown including Capitals. Press f5 or Refresh the page to play again!");
+    }
+            //Fight and Dialouge (SinglePlayer)
+    //Bulbusar (SinglePlayer)
+     if (userOne === "Bulbusar"){
+         if (CpuChoice === "Bulbusar"){
+             confirm("Your Bulbusar vs the Computer's Bulbusar! There equal!");
+             if(computerWinRng === "1"){
+                 confirm("But Your Bulbusar gets  a Lucky hit on the Computer's Bulbusar- Player One Wins!");
+             } else {
+                 confirm("But the Computer's Bulbusar gets  a Lucky hit on Your Bulbusar- You loose!");
+             }
+         }
+         if(CpuChoice === "Charmander"){
+             confirm("Your Bulbusar vs the Computer's Charmander!");
+             confirm("Charmander uses Fireball!");
+             confirm("It was super Effective!");
+             confirm("Bulbusar Faints, You loose! Play again!");
+         }
+         if(CpuChoice === "Squirtle"){
+             confirm("Your Bulbusar vs the Computer's Squrtile!");
+             confirm("Squrtle uses Bubble");
+             confirm("But Nothing Happened!");
+             confirm("Bulbusar uses Grass Knot!");
+             confirm("It was Super Effective!");
+             confirm("Squirtle Faints- You Win! Play Again!");
+         }
+     }
+     //Charmander (SinglePlayer)
+          if (userOne === "Charmander"){
+         if (CpuChoice === "Charmander"){
+             confirm("Your Charmander vs the Computer's Charmander! It looks like nothing could happen!");
+             if(computerWinRng === "1"){
+                 confirm("But Your Charmander gets  the edge on the Computer's Charmander- You Win!");
+             } else {
+                 confirm("But the Computer's Charmander gets  the edge on Your Charmander- You loose!");
+             }
+         }
+         if(CpuChoice === "Bulbusar"){
+             confirm("Your Charmander vs the Computer's Bulbusar!");
+             confirm("Bulbusar uses Spore");
+             confirm("Charmander Falls asleep!");
+             var useBerry = prompt("Use 'Sitrus Berry', or use 'Chesto Berry'?");
+             if(useBerry === "Chesto Berry"){
+                 confirm("Your Charmander wakes Up!");
+                 confirm("Charmander uses Fireball!");
+             confirm("It was super Effective!");
+             confirm("Bulbusar Faints, You Win! Play again!");
+             } else if ( useBerry === "Sitrus Berry"){
+             confirm("Your Charmander restores 30HP!");
+             confirm("Charmander is Asleep");
+             confirm("Bulbusar uses Pound!");
+             confirm("It was super Effective!");
+             confirm("Charmander Faints, You loose! Play again!");
+             } else {
+                 confirm("You did not make a valid awnser, And so you did nothing! You loose!");
+             }
+         }
+         if(CpuChoice === "Squirtle"){
+             confirm("Your Charmander vs the Computer's Squrtile!");
+             confirm("Squrtle uses Water Pulse");
+             confirm("It was Super Effective!");
+             confirm("Charmander Faints- You loose! Play Again!");
+         }
+     }
+     //Squirtle (SinglePlayer)
+      if (userOne === "Squirtle"){
+         if (CpuChoice === "Squirtle"){
+             confirm("Your Squirtle vs Squirtle! It's a stalemate!");
+             if(computerWinRng === "1"){
+                 confirm("But Your Squirtle gets  a quick move on the Computer's Squirtle- You Win!");
+             } else {
+                 confirm("But the Computer's Squirtle gets  a quick move on Your Squirtle- You loose!");
+             }
+         }
+         if(CpuChoice === "Bulbusar"){
+             confirm("Your Squirtle vs the Computer's Bulbusar!");
+             confirm("Squirtle uses Hydro Pump!");
+             confirm("It just makes Bulbusar Stronger!");
+             confirm("Bulbusar uses Growth!");
+             confirm("Bulbusar is Even stronger");
+             confirm("Squirtle uses Rain Dance!");
+             confirm("Bulbusar cant get any stronger!");
+             confirm("Bulbusar uses Giga Drain!");
+             confirm("Squirtle is destroyed in one shot!");
+             confirm("You loose!");
+             }
+         if(CpuChoice === "Charmander"){
+             confirm("Your Squirtle vs the Computer's Charmander!");
+             confirm("Charmander uses Rock smash!");
+             confirm("Squirtle takes 'Some' Damage!");
+             confirm("But Squirtle uses Waterfall!");
+             confirm("It was Super Effective!");
+             confirm("Charmander Faints!");
+             confirm("You Win! Play again by Refreshing the page or pressing f5.");
+            }
+      }
+    //Multiplayer
+} else if( gamemode == 2 ) {
+confirm("You have Chosen: Multiplayer.");
 confirm("Got two players? Name one as Player One and the Other as Player Two- Please do not stop the page from creating additional Dialogues.");
 confirm("Right. Player Two, Look away.");
-//UserOne
+//UserOne (Multiplayer)
 var userOne = prompt("Choose: 'Bulbusar', 'Charmander' or 'Squirtle'");
 //PlayerTwo
  confirm("Next! Player One, Look Away! Player Two, You're in!");
 var userTwo = prompt("Choose: 'Bulbusar', 'Charmander' or 'Squirtle'");
-    //Binary Debug for userOne
+    //Binary Debug for userOne (Multiplayer)
     if(userOne === "Bulbusar"){
         userOneOn = "1";
     }
@@ -27,7 +166,8 @@ var userTwo = prompt("Choose: 'Bulbusar', 'Charmander' or 'Squirtle'");
         console.log("User One N/A");
         confirm("User One Did not enter a valid pokemon, Please make sure you have used Capitals and spelt it correctly");
     }
-    //Binary Debug for userOne
+
+    //Binary Debug for userTwo (Multiplayer)
     if(userTwo === "Bulbusar"){
         userTwoOn = "1";
     }
@@ -41,79 +181,79 @@ var userTwo = prompt("Choose: 'Bulbusar', 'Charmander' or 'Squirtle'");
         console.log("User Two N/A");
         confirm("User Two Did not enter a valid pokemon, Please make sure you have used Capitals and spelt it correctly");
     }
-    //Fight and Dialouge
-    //Bulbusar
+    //Fight and Dialouge (Multiplayer)
+    //Bulbusar (Multiplayer)
      if (userOne === "Bulbusar"){
          if (userTwo === "Bulbusar"){
-             confirm("Bulbusar vs Bulbusar! There equal!");
-             if(randomnumber === "1"){
+             confirm("Player One's Bulbusar vs Player Two's Bulbusar! There equal!");
+             if(computerWinRng === "1"){
                  confirm("But Player One's Bulbusar gets  a Lucky hit on Player Two's Bulbusar- Player One Wins!");
              } else {
                  confirm("But Player Two's Bulbusar gets  a Lucky hit on Player One's Bulbusar- Player Two Wins!");
              }
          }
          if(userTwo === "Charmander"){
-             confirm("Bulbusar vs Charmander!");
+             confirm("Player One's Bulbusar vs Player Two's Charmander!");
              confirm("Charmander uses Fireball!");
              confirm("It was super Effective!");
              confirm("Bulbusar Faints, Player Two wins. Play again!");
          }
          if(userTwo === "Squirtle"){
-             confirm("Bulbusar vs Squrtile!");
+             confirm("Player One's Bulbusar vs Player Two's Squrtile!");
              confirm("Squrtle uses Bubble");
              confirm("But Nothing Happened!");
              confirm("Bulbusar uses Grass Knot!");
              confirm("It was Super Effective!");
              confirm("Squirtle Faints- Player One Wins! Play Again!");
          }
-     }
-     //Charmander
+     //Charmander (Multiplayer)
           if (userOne === "Charmander"){
          if (userTwo === "Charmander"){
-             confirm("Charmander vs Charmander! It looks like nothing could happen!");
-             if(randomnumber === "1"){
+             confirm("Player One's Charmander vs Player Two's Charmander! It looks like nothing could happen!");
+             if(computerWinRng === "1"){
                  confirm("But Player One's Charmander gets  the edge on Player Two's Charmander- Player One Wins!");
              } else {
                  confirm("But Player Two's Charmander gets  the edge on Player One's Charmander- Player Two Wins!");
              }
          }
          if(userTwo === "Bulbusar"){
-             confirm("Charmander vs Bulbusar!");
-             confirm("Bulbusar uses Spore");
-             confirm("Charmander Falls asleep!");
+             confirm("Player One's Charmander vs Player Two's Bulbusar!");
+             confirm("Player Two's Bulbusar uses Spore");
+             confirm("Player One's Charmander Falls asleep!");
              var useBerry = prompt("Use 'Sitrus Berry', or use 'Chesto Berry'?");
              if(useBerry === "Chesto Berry"){
-                 confirm("Charmander wakes Up!");
-                 confirm("Charmander uses Fireball!");
+                 confirm("Player One's Charmander wakes Up!");
+                 confirm("Player One's Charmander uses Fireball!");
              confirm("It was super Effective!");
-             confirm("Bulbusar Faints, Player Two wins. Play again!");
-             }else{
-             confirm("Charmander restores 30HP!");
-             confirm("Charmander is Asleep");
+             confirm("Player Two's Bulbusar Faints, Player One wins. Play again!");
+             } else if ( useBerry === "Sitrus Berry"){
+             confirm("Player One's Charmander restores 30HP!");
+             confirm("Player One's Charmander is Asleep");
              confirm("Bulbusar uses Pound!");
              confirm("It was super Effective!");
-             confirm("Charmander Faints, Player Two wins. Play again!");
+             confirm("Player One's Charmander Faints, Player Two wins. Play again!");
+             } else {
+                 confirm("Player One did not make a valid awnser, And so he did nothing! Player Two Wins!");
              }
          }
          if(userTwo === "Squirtle"){
-             confirm("Charmander vs Squrtile!");
+             confirm("Player One's Charmander vs Player Two's Squrtile!");
              confirm("Squrtle uses Water Pulse");
              confirm("It was Super Effective!");
              confirm("Charmander Faints- Player Two Wins! Play Again!");
          }
-     }
-     //Squirtle
+     //Squirtle (Multiplayer)
       if (userOne === "Squirtle"){
          if (userTwo === "Squirtle"){
-             confirm("Squirtle vs Squirtle! It's a stalemate!");
-             if(randomnumber === "1"){
+             confirm("Player One's Squirtle vs Player Two's Squirtle! It's a stalemate!");
+             if(computerWinRng === "1"){
                  confirm("But Player One's Squirtle gets  a quick move on Player Two's Squirtle- Player One Wins!");
              } else {
                  confirm("But Player Two's Squirtle gets  a quick move on Player One's Squirtle- Player Two Wins!");
              }
          }
          if(userTwo === "Bulbusar"){
-             confirm("Squirtle vs Bulbusar!");
+             confirm("Player One's Player Two's Squirtle vs Bulbusar!");
              confirm("Squirtle uses Hydro Pump!");
              confirm("It just makes Bulbusar Stronger!");
              confirm("Bulbusar uses Growth!");
@@ -125,7 +265,7 @@ var userTwo = prompt("Choose: 'Bulbusar', 'Charmander' or 'Squirtle'");
              confirm("Player Two Wins!");
              }
          if(userTwo === "Charmander"){
-             confirm("Squirtle vs Charmander!");
+             confirm("Player One's Squirtle vs Charmander!");
              confirm("Charmander uses Rock smash!");
              confirm("Squirtle takes 'Some' Damage!");
              confirm("But Squirtle uses Waterfall!");
@@ -134,3 +274,8 @@ var userTwo = prompt("Choose: 'Bulbusar', 'Charmander' or 'Squirtle'");
              confirm("Player One wins!");
             }
          }
+    }
+}
+} else {
+    confirm("Invalid number of players entered, make sure you awnser '1' or '2' Player game, press f5 or Refresh the page to restart.");
+}
