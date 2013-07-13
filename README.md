@@ -1,7 +1,7 @@
-150 Lines of jQuery
+500 Lines of jQuery
 ===================
 
-Source code for TheSlimeWarrior's entry into the 150 Lines of jQuery competition.
+Source code for TheSlimeWarrior's entry into the 500 Lines of jQuery competition.
 
 Bug Reports
 ===========
